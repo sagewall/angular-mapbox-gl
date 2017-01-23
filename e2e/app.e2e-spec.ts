@@ -6,9 +6,4 @@ describe('angular-mapbox-gl App', function() {
   beforeEach(() => {
     page = new AngularMapboxGlPage();
   });
-
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
 });
