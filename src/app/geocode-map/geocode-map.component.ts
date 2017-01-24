@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
+const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js');
 
 @Component({
   selector: 'app-geocode-map',

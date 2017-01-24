@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { BasicMapComponent } from './basic-map/basic-map.component';
 import { GeocodeMapComponent } from './geocode-map/geocode-map.component';
+import { DrawMapComponent } from './draw-map/draw-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BasicMapComponent,
-    GeocodeMapComponent
+    GeocodeMapComponent,
+    DrawMapComponent
   ],
   imports: [
     BrowserModule,

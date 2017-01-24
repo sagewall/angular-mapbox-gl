@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HomeComponent } from './home/home.component';
 import { BasicMapComponent } from './basic-map/basic-map.component';
 import { GeocodeMapComponent } from './geocode-map/geocode-map.component';
+import { DrawMapComponent } from './draw-map/draw-map.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
         AppComponent,
         HomeComponent,
         BasicMapComponent,
-        GeocodeMapComponent
+        GeocodeMapComponent,
+        DrawMapComponent
       ],
       imports: [
         AppRoutingModule,
