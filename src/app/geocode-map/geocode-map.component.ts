@@ -24,5 +24,8 @@ export class GeocodeMapComponent implements OnInit {
       accessToken: mapboxgl.accessToken
     });
     map.addControl(geocoder, 'top-left');
+
+    let geolocate = new mapboxgl.GeolocateControl({});
+    map.addControl(geolocate, 'top-right');
   }
 }
