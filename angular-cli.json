@@ -20,7 +20,7 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/mapbox-gl/dist/mapbox-gl.css",
-        "../node_modules/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css",
+        "../node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css",
         "styles.sass"
       ],
       "scripts": [

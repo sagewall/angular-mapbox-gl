@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-const MapboxGeocoder = require('mapbox-gl-geocoder');
+const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 @Component({
   selector: 'app-geocode-map',
@@ -20,12 +20,12 @@ export class GeocodeMapComponent implements OnInit {
       zoom: 10
     });
 
-    let geocoder = new MapboxGeocoder({
+    const geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken
     });
     map.addControl(geocoder, 'top-left');
 
-    let geolocate = new mapboxgl.GeolocateControl({});
+    const geolocate = new mapboxgl.GeolocateControl({});
     map.addControl(geolocate, 'top-right');
   }
 }
