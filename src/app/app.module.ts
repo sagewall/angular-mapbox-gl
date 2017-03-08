@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { BasicMapComponent } from './basic-map/basic-map.component';
 import { GeocodeMapComponent } from './geocode-map/geocode-map.component';
 import { DrawMapComponent } from './draw-map/draw-map.component';
+import { EditMapComponent } from './edit-map/edit-map.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DrawMapComponent } from './draw-map/draw-map.component';
     HomeComponent,
     BasicMapComponent,
     GeocodeMapComponent,
-    DrawMapComponent
+    DrawMapComponent,
+    EditMapComponent
   ],
   imports: [
     BrowserModule,
