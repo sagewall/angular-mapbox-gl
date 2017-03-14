@@ -6,6 +6,7 @@ import { GeocodeMapComponent } from '../geocode-map/geocode-map.component';
 import { DrawMapComponent } from '../draw-map/draw-map.component';
 import { EditMapComponent } from '../edit-map/edit-map.component';
 import { LayersMapComponent } from '../layers-map/layers-map.component';
+import { ScaleMapComponent } from '../scale-map/scale-map.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'geocode-map', component: GeocodeMapComponent},
   {path: 'draw-map', component: DrawMapComponent},
   {path: 'edit-map', component: EditMapComponent},
-  {path: 'layers-map', component: LayersMapComponent}
+  {path: 'layers-map', component: LayersMapComponent},
+  {path: 'scale-map', component: ScaleMapComponent}
 ];
 
 @NgModule({

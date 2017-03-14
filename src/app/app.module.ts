@@ -11,6 +11,7 @@ import { GeocodeMapComponent } from './geocode-map/geocode-map.component';
 import { DrawMapComponent } from './draw-map/draw-map.component';
 import { EditMapComponent } from './edit-map/edit-map.component';
 import { LayersMapComponent } from './layers-map/layers-map.component';
+import { ScaleMapComponent } from './scale-map/scale-map.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LayersMapComponent } from './layers-map/layers-map.component';
     GeocodeMapComponent,
     DrawMapComponent,
     EditMapComponent,
-    LayersMapComponent
+    LayersMapComponent,
+    ScaleMapComponent
   ],
   imports: [
     BrowserModule,
