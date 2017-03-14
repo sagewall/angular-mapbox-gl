@@ -9,6 +9,7 @@ import { BasicMapComponent } from './basic-map/basic-map.component';
 import { GeocodeMapComponent } from './geocode-map/geocode-map.component';
 import { DrawMapComponent } from './draw-map/draw-map.component';
 import { EditMapComponent } from './edit-map/edit-map.component';
+import {LayersMapComponent} from "./layers-map/layers-map.component";
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -19,7 +20,8 @@ describe('AppComponent', () => {
         BasicMapComponent,
         GeocodeMapComponent,
         DrawMapComponent,
-        EditMapComponent
+        EditMapComponent,
+        LayersMapComponent
       ],
       imports: [
         AppRoutingModule,

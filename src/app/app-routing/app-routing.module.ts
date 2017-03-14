@@ -5,6 +5,7 @@ import { BasicMapComponent } from '../basic-map/basic-map.component';
 import { GeocodeMapComponent } from '../geocode-map/geocode-map.component';
 import { DrawMapComponent } from '../draw-map/draw-map.component';
 import { EditMapComponent } from '../edit-map/edit-map.component';
+import { LayersMapComponent } from '../layers-map/layers-map.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'basic-map', component: BasicMapComponent},
   {path: 'geocode-map', component: GeocodeMapComponent},
   {path: 'draw-map', component: DrawMapComponent},
-  {path: 'edit-map', component: EditMapComponent}
+  {path: 'edit-map', component: EditMapComponent},
+  {path: 'layers-map', component: LayersMapComponent}
 ];
 
 @NgModule({
