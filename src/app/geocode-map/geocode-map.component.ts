@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+const Mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js');
 
 @Component({
@@ -12,8 +12,8 @@ export class GeocodeMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic2FnZXdhbGwiLCJhIjoiMjRhNDExZWMwY2M1NzFlOTYxZWJjNjRiZTBhZGQ2NDEifQ.85AyZco3_blL_yZ0dv3Bog';
-    const map = new mapboxgl.Map({
+    Mapboxgl.accessToken = 'pk.eyJ1Ijoic2FnZXdhbGwiLCJhIjoiMjRhNDExZWMwY2M1NzFlOTYxZWJjNjRiZTBhZGQ2NDEifQ.85AyZco3_blL_yZ0dv3Bog';
+    const map = new Mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya',
       center: [-105.25, 39.75],
@@ -21,11 +21,11 @@ export class GeocodeMapComponent implements OnInit {
     });
 
     const geocoder = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken
+      accessToken: Mapboxgl.accessToken
     });
     map.addControl(geocoder, 'top-left');
 
-    const geolocate = new mapboxgl.GeolocateControl({});
+    const geolocate = new Mapboxgl.GeolocateControl({});
     map.addControl(geolocate, 'top-right');
   }
 }
