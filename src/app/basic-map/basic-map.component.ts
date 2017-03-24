@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-const Mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 @Component({
   selector: 'app-basic-map',

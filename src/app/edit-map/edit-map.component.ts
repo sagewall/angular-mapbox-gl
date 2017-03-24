@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-const MapboxClient = require('mapbox/dist/mapbox-sdk.js');
-const Mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-const MapboxDraw = require('@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.js');
+import * as MapboxClient from 'mapbox/dist/mapbox-sdk.js';
+import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import * as MapboxDraw from '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.js';
 
 @Component({
   selector: 'app-edit-map',
