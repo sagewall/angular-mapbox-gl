@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { api_tokens } from '../../assets/api_tokens';
 import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.js';
 
@@ -12,7 +13,7 @@ export class DrawMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    Mapboxgl.accessToken = 'pk.eyJ1Ijoic2FnZXdhbGwiLCJhIjoiMjRhNDExZWMwY2M1NzFlOTYxZWJjNjRiZTBhZGQ2NDEifQ.85AyZco3_blL_yZ0dv3Bog';
+    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
     const map = new Mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya',
