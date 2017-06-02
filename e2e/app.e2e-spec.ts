@@ -1,14 +1,16 @@
-import { AngularMapboxGlUpdatePage } from './app.po';
+import { AngularMapboxGlPage } from './app.po';
 
-describe('angular-mapbox-gl-update App', () => {
-  let page: AngularMapboxGlUpdatePage;
+describe('angular-mapbox-gl App', () => {
+  let page: AngularMapboxGlPage;
 
   beforeEach(() => {
-    page = new AngularMapboxGlUpdatePage();
+    page = new AngularMapboxGlPage();
   });
 
-  it('should have a nabvar brand of Angular Mapbox GL', () => {
+  it('should display welcome message', done => {
     page.navigateTo();
-    expect(page.getNavbarBrandText()).toEqual('Angular Mapbox GL');
+    page.getNavbarBrandText()
+      .then(msg => expect(msg).toEqual('Angular Mapbox GL'))
+      .then(done, done.fail);
   });
 });
