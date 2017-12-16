@@ -1,5 +1,3 @@
-/* tslint:disable:no-unused-variable */
-
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -13,7 +11,7 @@ import { LayersMapComponent } from './layers-map/layers-map.component';
 import { ScaleMapComponent } from './scale-map/scale-map.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -29,10 +27,8 @@ describe('AppComponent', () => {
         AppRoutingModule,
         RouterTestingModule
       ]
-    });
-    TestBed.compileComponents();
-  });
-
+    }).compileComponents();
+  }));
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;

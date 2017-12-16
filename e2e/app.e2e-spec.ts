@@ -7,10 +7,8 @@ describe('angular-mapbox-gl App', () => {
     page = new AngularMapboxGlPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    page.getNavbarBrandText()
-      .then(msg => expect(msg).toEqual('Angular Mapbox GL'))
-      .then(done, done.fail);
+    expect(page.getNavbarBrandText()).toEqual('Angular Mapbox GL');
   });
 });
