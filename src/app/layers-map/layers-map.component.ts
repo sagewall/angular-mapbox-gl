@@ -14,7 +14,7 @@ export class LayersMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    (Mapboxgl as any).accessToken  = api_tokens.mapbox_public_token;
+    Mapboxgl.accessToken  = api_tokens.mapbox_public_token;
     this.map = new Mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya',
