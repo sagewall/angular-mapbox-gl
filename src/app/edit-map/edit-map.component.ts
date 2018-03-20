@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import { api_tokens } from '../../assets/api_tokens';
+import {Component, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
+import {api_tokens} from '../../assets/api_tokens';
 import * as MapboxClient from 'mapbox/dist/mapbox-sdk.js';
 import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.js';
@@ -9,40 +9,57 @@ import * as MapboxDraw from '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.js';
   templateUrl: './edit-map.component.html',
   styleUrls: ['./edit-map.component.sass']
 })
-export class EditMapComponent implements OnInit {
+export class EditMapComponent implements AfterViewInit {
+  @ViewChild('mapCanvas')
+  private mapCanvasElementRef: ElementRef;
 
-  constructor() {
+  private get mapCanvasNativeElement(): HTMLElement {
+    return this.mapCanvasElementRef.nativeElement;
   }
 
-  ngOnInit() {
-    const datasetId = 'cizym3hr9037a31qlrnpygtoy';
-    const client = new MapboxClient(api_tokens.mapbox_private_token);
-    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
+  private map: Mapboxgl.Map;
+  private style: string;
+  private longitude: number;
+  private latitude: number;
+  private zoom: number;
+  private datasetId: string;
+  private client: MapboxClient;
+  private draw: MapboxDraw;
 
-    const map = new Mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya',
-      center: [-105.25, 39.75],
-      zoom: 10
+  constructor() {
+    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
+    this.style = 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya';
+    this.longitude = -105.25;
+    this.latitude = 39.75;
+    this.zoom = 10;
+    this.datasetId = 'cizym3hr9037a31qlrnpygtoy';
+    this.client = new MapboxClient(api_tokens.mapbox_private_token);
+    this.draw = new MapboxDraw();
+  }
+
+  ngAfterViewInit() {
+    this.map = new Mapboxgl.Map({
+      container: this.mapCanvasNativeElement,
+      style: this.style,
+      center: [this.longitude, this.latitude],
+      zoom: this.zoom
     });
 
-    const draw = new MapboxDraw();
-
-    map.on('load', () => {
-      map.addControl(draw);
-      client.listFeatures(datasetId, {}, (err, collection) => {
+    this.map.on('load', () => {
+      this.map.addControl(this.draw);
+      this.client.listFeatures(this.datasetId, {}, (err, collection) => {
         if (err) {
           console.log(err);
         } else {
-          draw.add(collection);
+          this.draw.add(collection);
         }
       });
     });
 
-    map.on('draw.create', (e) => {
+    this.map.on('draw.create', (e) => {
       if (e.hasOwnProperty('features')) {
         for (const eventFeature of e.features) {
-          client.insertFeature(eventFeature, datasetId, (err, feature) => {
+          this.client.insertFeature(eventFeature, this.datasetId, (err, feature) => {
             if (err) {
               console.log(err);
             } else {
@@ -54,10 +71,10 @@ export class EditMapComponent implements OnInit {
       }
     });
 
-    map.on('draw.delete', (e) => {
+    this.map.on('draw.delete', (e) => {
       if (e.hasOwnProperty('features')) {
         for (const eventFeature of e.features) {
-          client.deleteFeature(eventFeature.id, datasetId, (err, feature) => {
+          this.client.deleteFeature(eventFeature.id, this.datasetId, (err, feature) => {
             if (err) {
               console.log(err);
             } else {

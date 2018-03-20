@@ -1,9 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DrawMapComponent } from './draw-map.component';
+import {DrawMapComponent} from './draw-map.component';
 
 describe('DrawMapComponent', () => {
   let component: DrawMapComponent;
@@ -11,9 +9,9 @@ describe('DrawMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DrawMapComponent ]
+      declarations: [DrawMapComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

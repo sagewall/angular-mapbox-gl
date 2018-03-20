@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
-import { BasicMapComponent } from '../basic-map/basic-map.component';
-import { GeocodeMapComponent } from '../geocode-map/geocode-map.component';
-import { DrawMapComponent } from '../draw-map/draw-map.component';
-import { EditMapComponent } from '../edit-map/edit-map.component';
-import { LayersMapComponent } from '../layers-map/layers-map.component';
-import { ScaleMapComponent } from '../scale-map/scale-map.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from '../home/home.component';
+import {BasicMapComponent} from '../basic-map/basic-map.component';
+import {GeocodeMapComponent} from '../geocode-map/geocode-map.component';
+import {DrawMapComponent} from '../draw-map/draw-map.component';
+import {EditMapComponent} from '../edit-map/edit-map.component';
+import {LayersMapComponent} from '../layers-map/layers-map.component';
+import {ScaleMapComponent} from '../scale-map/scale-map.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -25,4 +25,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

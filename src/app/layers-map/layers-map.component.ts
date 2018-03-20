@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { api_tokens } from '../../assets/api_tokens';
+import {Component, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
+import {api_tokens} from '../../assets/api_tokens';
 import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 @Component({
@@ -7,19 +7,35 @@ import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
   templateUrl: './layers-map.component.html',
   styleUrls: ['./layers-map.component.sass']
 })
-export class LayersMapComponent implements OnInit {
+export class LayersMapComponent implements AfterViewInit {
+  @ViewChild('mapCanvas')
+  private mapCanvasElementRef: ElementRef;
 
-  private map: any;
+  private get mapCanvasNativeElement(): HTMLElement {
+    return this.mapCanvasElementRef.nativeElement;
+  }
 
-  constructor() { }
+  private map: Mapboxgl.Map;
+  private style: string;
+  private longitude: number;
+  private latitude: number;
+  private zoom: number;
 
-  ngOnInit() {
-    Mapboxgl.accessToken  = api_tokens.mapbox_public_token;
+  constructor() {
+    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
+    this.style = 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya';
+    this.longitude = -105.25;
+    this.latitude = 39.75;
+    this.zoom = 10;
+  }
+
+  ngAfterViewInit() {
+
     this.map = new Mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya',
-      center: [-105.25, 39.75],
-      zoom: 10
+      container: this.mapCanvasNativeElement,
+      style: this.style,
+      center: [this.longitude, this.latitude],
+      zoom: this.zoom
     });
   }
 

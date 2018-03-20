@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EditMapComponent } from './edit-map.component';
+import {EditMapComponent} from './edit-map.component';
 
 describe('EditMapComponent', () => {
   let component: EditMapComponent;
@@ -8,9 +8,9 @@ describe('EditMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditMapComponent ]
+      declarations: [EditMapComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

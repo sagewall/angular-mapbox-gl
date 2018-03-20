@@ -1,9 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BasicMapComponent } from './basic-map.component';
+import {BasicMapComponent} from './basic-map.component';
 
 describe('BasicMapComponent', () => {
   let component: BasicMapComponent;
@@ -11,9 +9,9 @@ describe('BasicMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasicMapComponent ]
+      declarations: [BasicMapComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { AngularMapboxGlPage } from './app.po';
+import {AngularMapboxGlPage} from './app.po';
 
 describe('angular-mapbox-gl App', () => {
   let page: AngularMapboxGlPage;

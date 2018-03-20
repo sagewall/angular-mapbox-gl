@@ -4,14 +4,15 @@
     <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"
             (click)="toggleVisibility('historic-place')">
       Historic Place
-    </button><br>
+    </button>
+    <br>
     <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"
             (click)="toggleVisibility('historic-area')">
       Historic Area
     </button>
   </div>
   <div class="col-10">
-    <div id="map"></div>
+    <div #mapCanvas class="map-canvas"></div>
   </div>
 </div>
 
