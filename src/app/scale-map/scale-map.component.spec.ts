@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ScaleMapComponent} from './scale-map.component';
+import { ScaleMapComponent } from './scale-map.component';
 
 describe('ScaleMapComponent', () => {
   let component: ScaleMapComponent;

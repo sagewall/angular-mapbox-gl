@@ -1,5 +1,5 @@
-import {Component, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
-import {api_tokens} from '../../assets/api_tokens';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { api_tokens } from '../../assets/api_tokens';
 import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js';
 

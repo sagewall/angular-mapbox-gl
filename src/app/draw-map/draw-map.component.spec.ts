@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {DrawMapComponent} from './draw-map.component';
+import { DrawMapComponent } from './draw-map.component';
 
 describe('DrawMapComponent', () => {
   let component: DrawMapComponent;
