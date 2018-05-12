@@ -1,7 +1,7 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { api_tokens } from '../../assets/api_tokens';
-import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js';
+import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import { environment } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-geocode-map',
@@ -25,7 +25,7 @@ export class GeocodeMapComponent implements AfterViewInit {
   private geolocate: Mapboxgl.GeolocateControl;
 
   constructor() {
-    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
+    Mapboxgl.accessToken = environment.mapbox_public_token;
     this.style = 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya';
     this.longitude = -105.25;
     this.latitude = 39.75;

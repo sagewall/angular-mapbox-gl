@@ -1,6 +1,6 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { api_tokens } from '../../assets/api_tokens';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import { environment } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-basic-map',
@@ -22,7 +22,7 @@ export class BasicMapComponent implements AfterViewInit {
   private zoom: number;
 
   constructor() {
-    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
+    Mapboxgl.accessToken = environment.mapbox_public_token;
     this.style = 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya';
     this.longitude = -105.25;
     this.latitude = 39.75;

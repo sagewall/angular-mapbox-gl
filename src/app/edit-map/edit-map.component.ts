@@ -1,8 +1,8 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { api_tokens } from '../../assets/api_tokens';
-import * as MapboxClient from 'mapbox/dist/mapbox-sdk.js';
-import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.js';
+import * as Mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import * as MapboxClient from 'mapbox/dist/mapbox-sdk.js';
+import { environment } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-edit-map',
@@ -27,13 +27,13 @@ export class EditMapComponent implements AfterViewInit {
   private draw: MapboxDraw;
 
   constructor() {
-    Mapboxgl.accessToken = api_tokens.mapbox_public_token;
+    Mapboxgl.accessToken = environment.mapbox_public_token;
     this.style = 'mapbox://styles/sagewall/ciwf7ja64001o2psg2v73nsya';
     this.longitude = -105.25;
     this.latitude = 39.75;
     this.zoom = 10;
     this.datasetId = 'cizym3hr9037a31qlrnpygtoy';
-    this.client = new MapboxClient(api_tokens.mapbox_private_token);
+    this.client = new MapboxClient(environment.mapbox_private_token);
     this.draw = new MapboxDraw();
   }
 
