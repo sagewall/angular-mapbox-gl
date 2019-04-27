@@ -41,7 +41,8 @@ export class GeocodeMapComponent implements AfterViewInit {
     });
 
     this.geocoder = new MapboxGeocoder({
-      accessToken: Mapboxgl.accessToken
+      accessToken: Mapboxgl.accessToken,
+      mapboxgl: Mapboxgl
     });
     this.map.addControl(this.geocoder, 'top-left');
 
